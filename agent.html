@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Стать агентом — Sunkar Finance</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+  <header class="site-header"><div class="container"><a href="index.html">← Назад</a></div></header>
+  <main class="container">
+    <h2>Станьте агентом Sunkar Finance</h2>
+    <p>Рекомендуйте клиентов — получайте 1% от суммы одобренного кредита.</p>
+    <form id="agentForm">
+      <label>ФИО<input name="name" required></label>
+      <label>Телефон<input name="phone" required></label>
+      <label>Город<input name="city" required></label>
+      <div class="modal-actions">
+        <button id="agentSend" class="btn primary" type="button">Отправить заявку</button>
+      </div>
+    </form>
+  </main>
+<script>
+document.getElementById('agentSend').addEventListener('click', function(){
+  const f = document.getElementById('agentForm');
+  const name = encodeURIComponent(f.name.value||'—');
+  const phone = encodeURIComponent(f.phone.value||'—');
+  const city = encodeURIComponent(f.city.value||'—');
+  const text = encodeURIComponent('Хочу стать агентом. Данные: '+name+' Тел: '+phone+' Город: '+city);
+  const url = 'https://wa.me/77052606667?text='+text;
+  window.open(url,'_blank');
+});
+</script>
+</body>
+</html>

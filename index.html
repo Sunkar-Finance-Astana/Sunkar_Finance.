@@ -1,0 +1,149 @@
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sunkar Finance — финансовый консалтинг нового уровня</title>
+  <meta name="description" content="Sunkar Finance — ипотека, кредиты без залога, автокредиты, рефинансирование. Узнайте вероятность одобрения.">
+  <meta property="og:title" content="Sunkar Finance — Узнайте вероятность одобрения">
+  <meta property="og:description" content="Проверьте шанс одобрения кредита и оставьте заявку в WhatsApp.">
+  <meta property="og:image" content="assets/images/logo.png">
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <img src="assets/images/logo.png" alt="Sunkar Finance" class="logo" id="logoImg">
+        <div class="titles">
+          <h1 id="main-title">Sunkar Finance</h1>
+          <p id="slogan">Финансовый консалтинг нового уровня</p>
+        </div>
+      </div>
+      <nav class="lang">
+        <a href="index.html">RU</a> | <a href="kz/index.html">KZ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2 id="hero-title">Узнайте вероятность одобрения кредита</h2>
+      <p>Быстрая предварительная оценка — 1 минута. Никаких обязательств.</p>
+      <button id="openCalc" class="btn primary">Проверить сейчас</button>
+    </section>
+
+    <section class="services">
+      <h3>Наши услуги</h3>
+      <ul>
+        <li>Кредиты без залога — до 10 млн (без подтверждения) / до 20 млн (с подтверждением)</li>
+        <li>Кредит под залог недвижимости и авто — до 80 млн</li>
+        <li>Ипотека — сопровождение под ключ</li>
+        <li>Кредиты для ИП / ТОО</li>
+        <li>Автокредитование</li>
+        <li>Рефинансирование — до 20 млн</li>
+      </ul>
+    </section>
+
+    <section class="partners">
+      <h3>Наша партнёрская сеть по Казахстану</h3>
+      <img src="assets/images/map-kz.png" alt="Карта Казахстана" class="map">
+      <p class="muted">Пункты нашей партнёрской сети в городах: Астана, Алматы, Шымкент, Тараз, Атырау, Актау, Актобе, Кызылорда и др.</p>
+      <h4>Официальные партнёры</h4>
+      <div class="partner-logos">
+        <img src="assets/images/partner1.png" alt="partner1">
+        <img src="assets/images/partner2.png" alt="partner2">
+        <img src="assets/images/partner3.png" alt="partner3">
+      </div>
+    </section>
+
+    <section class="contacts">
+      <h3>Связаться с нами</h3>
+      <p>Главный офис: Астана, ул. Абая 18</p>
+      <p>WhatsApp: <a href="https://wa.me/77052606667" target="_blank">+7 705 260 66 67</a></p>
+      <div class="socials">
+        <a href="https://www.tiktok.com/@sunkar.finance.astana" target="_blank"><img src="assets/images/tiktok.png" alt="TikTok"></a>
+        <a href="https://www.instagram.com/sunkar.finance.astana" target="_blank"><img src="assets/images/instagram.png" alt="Instagram"></a>
+        <a href="https://2gis.kz/astana/geo/70000001105774380" target="_blank"><img src="assets/images/2gis.png" alt="2GIS"></a>
+      </div>
+    </section>
+
+    <section class="agent-cta">
+      <h3>Станьте нашим агентом</h3>
+      <p>Направляйте клиентов и получайте 1% от суммы одобренного кредита.</p>
+      <a class="btn" href="agent.html">Хочу стать агентом</a>
+    </section>
+  </main>
+
+  <!-- Modal Calculator -->
+  <div class="modal" id="calcModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="closeCalc">×</button>
+      <h3>Узнайте вероятность одобрения</h3>
+      <form id="calcForm">
+        <label>ФИО<input name="name" required></label>
+        <label>Телефон<input name="phone" required></label>
+        <label>Город<input name="city" required></label>
+        <label>Возраст<input name="age" type="number" min="18" max="100" required></label>
+        <label>Желаемая сумма (тенге)<input name="amount" type="number" required></label>
+        <label>Есть действующие кредиты?
+          <select name="hasLoans">
+            <option value="no">Нет</option>
+            <option value="yes">Да</option>
+          </select>
+        </label>
+        <label>Сумма ежемесячных платежей (тенге)<input name="monthly" type="number" value="0"></label>
+        <label>Официальный доход (тг)<input name="income" type="number" value="0"></label>
+        <label>Действующие просрочки
+          <select name="delays">
+            <option value="none">Нет</option>
+            <option value="closed">Закрыта недавно</option>
+            <option value="30">До 30 дней</option>
+            <option value="90">Больше 30 дней</option>
+          </select>
+        </label>
+        <label>Были ли просрочки ранее?
+          <select name="pastDelays">
+            <option value="none">Нет</option>
+            <option value="90">До 90 дней</option>
+            <option value="over90">Больше 90 дней</option>
+          </select>
+        </label>
+        <label>Наличие налог/ломбард задолженности?
+          <select name="otherDebt">
+            <option value="no">Нет</option><option value="yes">Да</option>
+          </select>
+        </label>
+        <label>Вид кредитования
+          <select name="service">
+            <option value="general">Общая заявка</option>
+            <option value="noIncome">Кредиты без подтверждения дохода</option>
+            <option value="withIncome">Кредиты с подтверждением дохода</option>
+            <option value="collateral">Кредит под залог</option>
+            <option value="mortgage">Ипотека</option>
+            <option value="business">Кредиты ИП/ТОО</option>
+            <option value="car">Автокредит</option>
+            <option value="refinance">Рефинансирование</option>
+          </select>
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="calcBtn" class="btn primary">Рассчитать</button>
+        </div>
+      </form>
+      <div id="resultBlock" class="result" style="display:none">
+        <div class="result-meter"><span id="resultPercent">0%</span></div>
+        <p id="resultText"></p>
+        <a id="sendWhats" class="btn" target="_blank">Оставить заявку в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">© Sunkar Finance — Все права защищены</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
